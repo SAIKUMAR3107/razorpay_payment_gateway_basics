@@ -67,71 +67,70 @@ class _PaymentScreenState extends State<PaymentScreen> {
         title: Text("Payment details"),
         content: Container(
           height: 250,
-          child: Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  height: 100,
-                  width: MediaQuery.of(context).size.width,
-                  padding: EdgeInsets.only(top: 10, bottom: 10),
-                  color: colorValue,
-                  child: Center(
-                    child: Stack(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border:
-                                  Border.all(width: 3, color: Colors.white)),
-                        ),
-                        Positioned(
-                            top: 17,
-                            left: MediaQuery.of(context).size.width / 3.6,
-                            child: Icon(
-                              Icons.done,
-                              color: Colors.white,
-                              weight: 40.0,
-                              size: 45,
-                            ))
-                      ],
-                    ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                height: 100,
+                width: MediaQuery.of(context).size.width,
+                padding: EdgeInsets.only(top: 10, bottom: 10),
+                color: colorValue,
+                child: Center(
+                  child: Stack(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border:
+                                Border.all(width: 3, color: Colors.white)),
+                      ),
+                      Positioned(
+                          top: 17,
+                          left: MediaQuery.of(context).size.width / 3.6,
+                          child: Icon(
+                            Icons.done,
+                            color: Colors.white,
+                            weight: 40.0,
+                            size: 45,
+                          ))
+                    ],
                   ),
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                Row(
-                  children: [
-                    Icon(
-                      Icons.done,
-                      color: colorValue,
-                      weight: 20.0,
-                    ),
-                    SizedBox(
-                      width: 15,
-                    ),
-                    Text(
-                      paymentStatus,
-                      style: TextStyle(
-                          color: colorValue,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(paymentStatusDescription),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(response.startsWith("pay")
-                    ? "Payment ID : $response"
-                    : "$response")
-              ],
-            ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Icon(
+                    Icons.done,
+                    color: colorValue,
+                    weight: 20.0,
+                  ),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  Text(
+                    paymentStatus,
+                    style: TextStyle(
+                        color: colorValue,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(paymentStatusDescription),
+              SizedBox(
+                height: 10,
+              ),
+              Text(response.startsWith("pay")
+                  ? "Payment ID : $response"
+                  : "$response")
+            ],
           ),
         ),
         actions: [
